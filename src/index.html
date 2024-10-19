@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./assets/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://kit.fontawesome.com/74061aeb00.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+<header class="header">
+    <h1>Capitals of the World</h1>
+</header>
+
 <body>
-    <h1>Capitals of the world checker!</h1>
-    <select id="capitals"></select>
-    <input type="button" value="Check Info" id="check-btn">
+    <div class="input">
+        <select id="capitals"></select>
+        <input type="button" value="click me!" id="check-btn">
+    </div>
+
+    <div id="content">
+        <h2>Name of the Country</h2>
+        <div class="city-time">
+            <h3>Name of the City</h3>
+            <i class="fa-solid fa-sun"></i>
+            <!-- <i class="fa-solid fa-moon"></i> -->
+        </div>
+
+        <p>Temperature: XX°F - XX°C</p>
+        <p>Feels Like: XX°F - XX°C</p>
+        <p>Humidity: X%</p>
+        <p>Local Time: </p>
+    </div>
 
 </body>
 

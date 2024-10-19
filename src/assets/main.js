@@ -12,11 +12,15 @@ const options = {
 	}
 };
 
-
 async function fetchData(urlApi) {
 	const response = await fetch(urlApi, options);
 	const result = await response.json();
 	return result
+}
+
+function getWeather(name) {
+	const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${name}`
+	return url
 }
 
 (async () => {
@@ -24,7 +28,6 @@ async function fetchData(urlApi) {
 		const dataCountries = await fetchData(urlCountries)
 		dataCountries.data.forEach(element => {
 			if (!regex.test(element.capital) && element.capital !== '') {
-				console.log(element)
 				const capital = document.createElement('option')
 				capital.value = element.capital
 				capital.innerHTML = element.capital + ' - ' + element.name
@@ -36,17 +39,19 @@ async function fetchData(urlApi) {
 	}
 })()
 
-async function getWeather(name) {
-	const data = await fetchData(`https://weatherapi-com.p.rapidapi.com/current.json?q=${name}`, options)
-	console.log(data)
-	return data
-}
+
 
 checkBtn.addEventListener('click', () => {
-	const city = capOps.value.split(' ').join('_')
-	showResults(getWeather(city))
+	try {
+		const cityName = capOps.value.split(' ').join('_')
+		fetchData(getWeather(cityName))
+		.then(response => {
+			console.log(response.current.temp_c, response.current.temp_f, response.current.humidity, response.current.feelslike_c, response.current.feelslike_f, response.current.is_day)
+			console.log(response.location.name, response.location.country, response.location.localtime)
+		})
+	} catch (error) {
+		console.log(error)
+	}
+
 })
 
-function showResults (data){
-	
-}

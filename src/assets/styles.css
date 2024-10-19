@@ -1,3 +1,84 @@
+
+
 html{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: italic;
     font-size: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(214, 247, 247);
 }
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.city-time{
+    display: flex;
+    gap: 1rem;
+}
+.city-time h3{
+    margin: 0;
+}
+
+#content h2{
+    margin-top: 0;
+    text-align: center;
+}
+
+#content{
+    margin-top: 2rem;
+    background-color: rgb(134, 223, 223);
+    border-radius: .2rem;
+    padding: 2rem;
+}
+
+.input{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header{
+    background-color: rgb(134, 223, 223);
+    border-radius: .2rem;
+    padding: .3rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color: rgb(114, 11, 211);
+}
+
+#check-btn{
+    width: 25%;
+    padding: .3rem;
+    border: none;
+    border-radius: .2rem;
+    background-color: rgb(134, 223, 223);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    color: rgb(114, 11, 211);
+
+}
+#check-btn:hover{
+    background-color: rgb(70, 204, 204);
+    cursor: pointer;
+    
+}
+
+#capitals{
+    border: none;
+    background-color: rgb(134, 223, 223);
+    border-radius: .2rem;
+    width: 65%;
+    color: rgb(114, 11, 211);
+    font-size: 1.1rem;
+    padding: 3px;
+}
+
+p{
+    color: rgb(114, 11, 211);
+}
+
