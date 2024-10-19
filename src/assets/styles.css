@@ -1,16 +1,21 @@
-
-
 html{
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: italic;
-    font-size: 20px;
+    font-size: 25px;
     width: 80%;
     margin: 0 auto;
     background-color: rgb(214, 247, 247);
+    background-image: url("/src/img/img.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: luminosity;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    letter-spacing: 2px;
 }
 
-h1{
+h1{ 
     text-align: center;
     font-weight: bold;
     font-size: 3rem;
@@ -30,10 +35,25 @@ h1{
 }
 
 #content{
+    color: rgb(198, 158, 236);
     margin-top: 2rem;
     background-color: rgb(134, 223, 223);
     border-radius: .2rem;
     padding: 2rem;
+}
+
+footer{
+        color: rgb(198, 158, 236);
+        margin-top: 2rem;
+        background-color: rgb(134, 223, 223);
+        border-radius: .2rem;
+        padding: .5rem;
+        text-align: center;
+        font-weight: 700;
+}
+
+.box{
+    box-shadow: 10px 10px rgb(182, 133, 228);
 }
 
 .input{
@@ -47,7 +67,20 @@ h1{
     padding: .3rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    color: rgb(114, 11, 211);
+    color: rgb(198, 158, 236);
+}
+
+span{
+    color: rgb(189, 121, 253);
+}
+
+.time{
+    display: flex;
+    gap: .5rem;
+}
+
+.time p{
+    margin: 0;
 }
 
 #check-btn{
@@ -55,15 +88,15 @@ h1{
     padding: .3rem;
     border: none;
     border-radius: .2rem;
-    background-color: rgb(134, 223, 223);
+    background-color: rgb(114, 11, 211);
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 1.1rem;
-    color: rgb(114, 11, 211);
+    color: white;
 
 }
 #check-btn:hover{
-    background-color: rgb(70, 204, 204);
+    background-color: rgb(80, 8, 146);
     cursor: pointer;
     
 }
@@ -79,6 +112,9 @@ h1{
 }
 
 p{
-    color: rgb(114, 11, 211);
+    font-weight: 700;
 }
 
+.sun-col {
+    color: rgb(100, 100, 17);
+}

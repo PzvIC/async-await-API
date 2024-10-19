@@ -13,30 +13,27 @@
     <script src="https://kit.fontawesome.com/74061aeb00.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<header class="header">
+<header class="header box">
     <h1>Capitals of the World</h1>
 </header>
 
 <body>
     <div class="input">
-        <select id="capitals"></select>
-        <input type="button" value="click me!" id="check-btn">
+        <select id="capitals" class="box">
+            <option value="" disabled selected>Select the capital you want to check</option>
+        </select>
+        <input type="button" value="click me!" id="check-btn" >
     </div>
 
-    <div id="content">
-        <h2>Name of the Country</h2>
-        <div class="city-time">
-            <h3>Name of the City</h3>
-            <i class="fa-solid fa-sun"></i>
-            <!-- <i class="fa-solid fa-moon"></i> -->
-        </div>
-
-        <p>Temperature: XX°F - XX°C</p>
-        <p>Feels Like: XX°F - XX°C</p>
-        <p>Humidity: X%</p>
-        <p>Local Time: </p>
+    <div id="content" class="box">
+        
+        
     </div>
 
 </body>
+
+<footer class="box">
+    This project was created using request from 2 APIs - by: Carlos Palkovic
+</footer>
 
 </html>

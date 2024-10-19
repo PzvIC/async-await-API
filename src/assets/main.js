@@ -18,6 +18,29 @@ async function fetchData(urlApi) {
 	return result
 }
 
+function injectinfo(country, capital, temp_c, temp_f, feels_c, feels_f, humid, localtime, is_day){
+	const where = document.getElementById('content')
+	where.innerHTML = 
+	`<h2>${country}</h2>
+        <div class="city-time">
+            <h3>Capital: <span>${capital}</span></h3>
+            
+        </div>
+
+        <p>Temperature: <span>${temp_f}°F - ${temp_c}°C</span></p>
+        <p>Feels Like: <span>${feels_f}°F - ${feels_c}°C</span></p>
+        <p>Humidity: <span>${humid}%</span></p>
+        <div class="time">
+            <p>Local Time: <span>${localtime}</span></p>
+
+			${is_day === 1 ? 
+				`<i class="fa-solid fa-sun">` : 
+				`</i><i class="fa-solid fa-moon"></i>`
+			}
+			
+		</div>`
+}
+
 function getWeather(name) {
 	const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${name}`
 	return url
@@ -46,8 +69,11 @@ checkBtn.addEventListener('click', () => {
 		const cityName = capOps.value.split(' ').join('_')
 		fetchData(getWeather(cityName))
 		.then(response => {
-			console.log(response.current.temp_c, response.current.temp_f, response.current.humidity, response.current.feelslike_c, response.current.feelslike_f, response.current.is_day)
-			console.log(response.location.name, response.location.country, response.location.localtime)
+			injectinfo(response.location.country, response.location.name, response.current.temp_c, response.current.temp_f, 
+				response.current.feelslike_c, response.current.feelslike_f, response.current.humidity, 
+				response.location.localtime, response.current.is_day)
+			// console.log(response.current.temp_c, response.current.temp_f, response.current.humidity, response.current.feelslike_c, response.current.feelslike_f, response.current.is_day)
+			// console.log(response.location.name, response.location.country, response.location.localtime)
 		})
 	} catch (error) {
 		console.log(error)
